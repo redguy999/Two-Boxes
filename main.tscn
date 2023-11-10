@@ -75,7 +75,7 @@ shape = SubResource("RectangleShape2D_yaw1n")
 texture = ExtResource("4_djfvu")
 
 [node name="SquareR" type="CharacterBody2D" parent="World"]
-position = Vector2(3028, -178)
+position = Vector2(750, 0)
 collision_mask = 2
 script = ExtResource("5_wsdmh")
 metadata/_edit_group_ = true
