@@ -28,9 +28,10 @@ scale = Vector2(0.5, 0.5)
 script = ExtResource("1_0loc0")
 
 [node name="SquareB" type="CharacterBody2D" parent="World"]
-position = Vector2(2146, 198)
+position = Vector2(2196, 1124)
 collision_mask = 2
 script = ExtResource("2_qo6yj")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/SquareB"]
 shape = SubResource("RectangleShape2D_lnvhn")
@@ -39,8 +40,8 @@ shape = SubResource("RectangleShape2D_lnvhn")
 texture = ExtResource("3_lni4n")
 
 [node name="floor" type="StaticBody2D" parent="World"]
-position = Vector2(1300, 382)
-scale = Vector2(22, 1)
+position = Vector2(1118, 1240)
+scale = Vector2(25, 1)
 collision_layer = 2
 metadata/_edit_group_ = true
 
@@ -51,7 +52,7 @@ shape = SubResource("RectangleShape2D_cfr8n")
 texture = ExtResource("4_djfvu")
 
 [node name="pillar1" type="StaticBody2D" parent="World"]
-position = Vector2(1004, 260)
+position = Vector2(512, 1115)
 scale = Vector2(1, 1.5)
 collision_layer = 2
 metadata/_edit_group_ = true
@@ -63,7 +64,7 @@ shape = SubResource("RectangleShape2D_4ekot")
 texture = ExtResource("4_djfvu")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="World"]
-position = Vector2(1696, 252)
+position = Vector2(1710, 1115)
 scale = Vector2(1, 1.5)
 collision_layer = 2
 metadata/_edit_group_ = true
@@ -75,7 +76,7 @@ shape = SubResource("RectangleShape2D_yaw1n")
 texture = ExtResource("4_djfvu")
 
 [node name="SquareR" type="CharacterBody2D" parent="World"]
-position = Vector2(750, 0)
+position = Vector2(146, 1094)
 collision_mask = 2
 script = ExtResource("5_wsdmh")
 metadata/_edit_group_ = true
