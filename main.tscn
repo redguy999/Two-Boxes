@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://cmqlbxc8ksxc8"]
+
+[ext_resource type="Script" path="res://World.gd" id="1_0loc0"]
+[ext_resource type="Script" path="res://SquareB.gd" id="2_qo6yj"]
+[ext_resource type="Texture2D" uid="uid://dy7vnmbuion3" path="res://Untitled.png" id="3_lni4n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lnvhn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cfr8n"]
+size = Vector2(432, 20)
+
+[node name="Main" type="Node"]
+
+[node name="World" type="Node2D" parent="."]
+script = ExtResource("1_0loc0")
+
+[node name="SquareB" type="CharacterBody2D" parent="World"]
+collision_mask = 2
+script = ExtResource("2_qo6yj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/SquareB"]
+shape = SubResource("RectangleShape2D_lnvhn")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/SquareB"]
+texture = ExtResource("3_lni4n")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="World"]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/StaticBody2D"]
+position = Vector2(131, 163)
+shape = SubResource("RectangleShape2D_cfr8n")
+
+[node name="GUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
