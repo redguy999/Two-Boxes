@@ -1,0 +1,125 @@
+[gd_scene load_steps=9 format=3 uid="uid://c51rextdshfd5"]
+
+[ext_resource type="Script" path="res://SquareB.gd" id="1_dfhxh"]
+[ext_resource type="Texture2D" uid="uid://dy7vnmbuion3" path="res://Untitled.png" id="2_brv24"]
+[ext_resource type="Texture2D" uid="uid://blgiprmrtbaep" path="res://Ground.png" id="3_jixvr"]
+[ext_resource type="Script" path="res://SquareR.gd" id="4_e7wtf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0kj82"]
+size = Vector2(99, 99)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bmddm"]
+size = Vector2(100, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2nqr2"]
+size = Vector2(100, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3tox2"]
+size = Vector2(100, 100)
+
+[node name="Level2" type="Node"]
+
+[node name="World" type="Node2D" parent="."]
+scale = Vector2(0.5, 0.5)
+
+[node name="SquareB" type="CharacterBody2D" parent="World"]
+position = Vector2(1438, 134)
+collision_mask = 2
+script = ExtResource("1_dfhxh")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/SquareB"]
+shape = SubResource("RectangleShape2D_0kj82")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/SquareB"]
+texture = ExtResource("2_brv24")
+
+[node name="floor" type="StaticBody2D" parent="World"]
+position = Vector2(1292, 348)
+scale = Vector2(21, 1)
+collision_layer = 2
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/floor"]
+shape = SubResource("RectangleShape2D_bmddm")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/floor"]
+texture = ExtResource("3_jixvr")
+
+[node name="floor2" type="StaticBody2D" parent="World"]
+position = Vector2(990, 950)
+scale = Vector2(21, 1)
+collision_layer = 2
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/floor2"]
+shape = SubResource("RectangleShape2D_bmddm")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/floor2"]
+texture = ExtResource("3_jixvr")
+
+[node name="SquareR" type="CharacterBody2D" parent="World"]
+position = Vector2(146, 1094)
+collision_mask = 2
+script = ExtResource("4_e7wtf")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/SquareR"]
+shape = SubResource("RectangleShape2D_2nqr2")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/SquareR"]
+texture = ExtResource("2_brv24")
+
+[node name="BoundaryL" type="StaticBody2D" parent="World"]
+editor_description = "Boundaries are for making sure that the player doesn't walk off."
+position = Vector2(-16, 538)
+scale = Vector2(1, 20)
+collision_layer = 2
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/BoundaryL"]
+shape = SubResource("RectangleShape2D_3tox2")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/BoundaryL"]
+texture = ExtResource("3_jixvr")
+
+[node name="BoundaryR" type="StaticBody2D" parent="World"]
+editor_description = "Boundaries are for making sure that the player doesn't walk off."
+position = Vector2(2338, 518)
+scale = Vector2(1, 20)
+collision_layer = 2
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/BoundaryR"]
+shape = SubResource("RectangleShape2D_3tox2")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/BoundaryR"]
+texture = ExtResource("3_jixvr")
+
+[node name="BoundaryT" type="StaticBody2D" parent="World"]
+editor_description = "Boundaries are for making sure that the player doesn't walk off."
+position = Vector2(1130, -60)
+rotation = 1.5708
+scale = Vector2(1, 25)
+collision_layer = 2
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/BoundaryT"]
+shape = SubResource("RectangleShape2D_3tox2")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/BoundaryT"]
+texture = ExtResource("3_jixvr")
+
+[node name="BoundaryB" type="StaticBody2D" parent="World"]
+editor_description = "Boundaries are for making sure that the player doesn't walk off."
+position = Vector2(1062, 1316)
+rotation = 1.5708
+scale = Vector2(1, 25)
+collision_layer = 2
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/BoundaryB"]
+shape = SubResource("RectangleShape2D_3tox2")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/BoundaryB"]
+texture = ExtResource("3_jixvr")
