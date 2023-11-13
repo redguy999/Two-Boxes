@@ -87,8 +87,15 @@ shape = SubResource("RectangleShape2D_ktj7q")
 [node name="Sprite2D" type="Sprite2D" parent="World/SquareR"]
 texture = ExtResource("3_lni4n")
 
+[node name="Area2D" type="Area2D" parent="World/SquareR"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/SquareR/Area2D"]
+shape = SubResource("RectangleShape2D_ktj7q")
+
 [node name="GUI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[connection signal="body_entered" from="World/SquareR/Area2D" to="World" method="_on_area_2d_body_entered"]

@@ -70,6 +70,11 @@ shape = SubResource("RectangleShape2D_2nqr2")
 [node name="Sprite2D" type="Sprite2D" parent="World/SquareR"]
 texture = ExtResource("2_brv24")
 
+[node name="Area2D" type="Area2D" parent="World/SquareR"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/SquareR/Area2D"]
+shape = SubResource("RectangleShape2D_2nqr2")
+
 [node name="BoundaryL" type="StaticBody2D" parent="World"]
 editor_description = "Boundaries are for making sure that the player doesn't walk off."
 position = Vector2(-16, 538)
