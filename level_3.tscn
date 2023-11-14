@@ -1,8 +1,188 @@
-[gd_scene load_steps=2 format=3 uid="uid://df4605tkkpq3"]
+[gd_scene load_steps=11 format=3 uid="uid://df4605tkkpq3"]
 
 [ext_resource type="Script" path="res://World.gd" id="1_k5ws1"]
+[ext_resource type="Script" path="res://SquareB.gd" id="2_km8ll"]
+[ext_resource type="Texture2D" uid="uid://dy7vnmbuion3" path="res://Untitled.png" id="3_3j66h"]
+[ext_resource type="Texture2D" uid="uid://blgiprmrtbaep" path="res://Ground.png" id="4_kccnu"]
+[ext_resource type="Script" path="res://SquareR.gd" id="4_vrfyv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bn2kx"]
+size = Vector2(99, 99)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ybb1a"]
+size = Vector2(100, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uixh5"]
+size = Vector2(100, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wtdf8"]
+size = Vector2(100, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7umo"]
+size = Vector2(100, 100)
 
 [node name="Node2D" type="Node"]
 
 [node name="World" type="Node2D" parent="."]
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_k5ws1")
+
+[node name="SquareB" type="CharacterBody2D" parent="World"]
+position = Vector2(126, 134)
+collision_mask = 2
+script = ExtResource("2_km8ll")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/SquareB"]
+shape = SubResource("RectangleShape2D_bn2kx")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/SquareB"]
+texture = ExtResource("3_3j66h")
+
+[node name="SquareR" type="CharacterBody2D" parent="World"]
+position = Vector2(166, 1214)
+collision_mask = 2
+script = ExtResource("4_vrfyv")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/SquareR"]
+shape = SubResource("RectangleShape2D_ybb1a")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/SquareR"]
+texture = ExtResource("3_3j66h")
+
+[node name="Area2D" type="Area2D" parent="World/SquareR"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/SquareR/Area2D"]
+shape = SubResource("RectangleShape2D_ybb1a")
+
+[node name="BoundaryL" type="StaticBody2D" parent="World"]
+editor_description = "Boundaries are for making sure that the player doesn't walk off."
+position = Vector2(-20, 538)
+scale = Vector2(1, 20)
+collision_layer = 2
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/BoundaryL"]
+shape = SubResource("RectangleShape2D_uixh5")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/BoundaryL"]
+texture = ExtResource("4_kccnu")
+
+[node name="BoundaryR" type="StaticBody2D" parent="World"]
+editor_description = "Boundaries are for making sure that the player doesn't walk off."
+position = Vector2(2334, 518)
+scale = Vector2(1, 20)
+collision_layer = 2
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/BoundaryR"]
+shape = SubResource("RectangleShape2D_uixh5")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/BoundaryR"]
+texture = ExtResource("4_kccnu")
+
+[node name="BoundaryT" type="StaticBody2D" parent="World"]
+editor_description = "Boundaries are for making sure that the player doesn't walk off."
+position = Vector2(1130, -60)
+rotation = 1.5708
+scale = Vector2(1, 25)
+collision_layer = 2
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/BoundaryT"]
+shape = SubResource("RectangleShape2D_uixh5")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/BoundaryT"]
+texture = ExtResource("4_kccnu")
+
+[node name="BoundaryB" type="StaticBody2D" parent="World"]
+editor_description = "Boundaries are for making sure that the player doesn't walk off."
+position = Vector2(1062, 1316)
+rotation = 1.5708
+scale = Vector2(1, 25)
+collision_layer = 2
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/BoundaryB"]
+shape = SubResource("RectangleShape2D_uixh5")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/BoundaryB"]
+texture = ExtResource("4_kccnu")
+
+[node name="floor" type="StaticBody2D" parent="World"]
+position = Vector2(1022, 230)
+scale = Vector2(21, 1)
+collision_layer = 2
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/floor"]
+shape = SubResource("RectangleShape2D_wtdf8")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/floor"]
+texture = ExtResource("4_kccnu")
+
+[node name="floor3" type="StaticBody2D" parent="World"]
+position = Vector2(980, 1058)
+scale = Vector2(21, 1)
+collision_layer = 2
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/floor3"]
+shape = SubResource("RectangleShape2D_wtdf8")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/floor3"]
+texture = ExtResource("4_kccnu")
+
+[node name="floor2" type="StaticBody2D" parent="World"]
+position = Vector2(1570, 658)
+rotation = 1.5708
+scale = Vector2(9, 10)
+collision_layer = 2
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/floor2"]
+shape = SubResource("RectangleShape2D_wtdf8")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/floor2"]
+texture = ExtResource("4_kccnu")
+
+[node name="Button1" type="Area2D" parent="World"]
+position = Vector2(826, 174)
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Button1"]
+scale = Vector2(1, 0.5)
+shape = SubResource("RectangleShape2D_w7umo")
+
+[node name="Button2" type="Area2D" parent="World"]
+position = Vector2(866, 1262)
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Button2"]
+scale = Vector2(1, 0.5)
+shape = SubResource("RectangleShape2D_w7umo")
+
+[node name="Door1" type="StaticBody2D" parent="World"]
+position = Vector2(676, 1204)
+scale = Vector2(0.5, 2)
+collision_layer = 2
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Door1"]
+shape = SubResource("RectangleShape2D_wtdf8")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Door1"]
+texture = ExtResource("4_kccnu")
+
+[node name="Door2" type="StaticBody2D" parent="World"]
+position = Vector2(1248, 90)
+scale = Vector2(0.5, 2)
+collision_layer = 2
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Door2"]
+shape = SubResource("RectangleShape2D_wtdf8")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Door2"]
+texture = ExtResource("4_kccnu")

@@ -25,7 +25,7 @@ scale = Vector2(0.5, 0.5)
 script = ExtResource("1_228g4")
 
 [node name="SquareB" type="CharacterBody2D" parent="World"]
-position = Vector2(2030, 144)
+position = Vector2(2034, 256)
 collision_mask = 2
 script = ExtResource("1_dfhxh")
 metadata/_edit_group_ = true
@@ -61,7 +61,7 @@ shape = SubResource("RectangleShape2D_bmddm")
 texture = ExtResource("3_jixvr")
 
 [node name="SquareR" type="CharacterBody2D" parent="World"]
-position = Vector2(146, 1094)
+position = Vector2(166, 1214)
 collision_mask = 2
 script = ExtResource("4_e7wtf")
 metadata/_edit_group_ = true
@@ -79,7 +79,7 @@ shape = SubResource("RectangleShape2D_2nqr2")
 
 [node name="BoundaryL" type="StaticBody2D" parent="World"]
 editor_description = "Boundaries are for making sure that the player doesn't walk off."
-position = Vector2(-16, 538)
+position = Vector2(-20, 538)
 scale = Vector2(1, 20)
 collision_layer = 2
 metadata/_edit_group_ = true
@@ -92,7 +92,7 @@ texture = ExtResource("3_jixvr")
 
 [node name="BoundaryR" type="StaticBody2D" parent="World"]
 editor_description = "Boundaries are for making sure that the player doesn't walk off."
-position = Vector2(2338, 518)
+position = Vector2(2334, 518)
 scale = Vector2(1, 20)
 collision_layer = 2
 metadata/_edit_group_ = true
