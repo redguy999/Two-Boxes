@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://cmqlbxc8ksxc8"]
 
-[ext_resource type="Script" path="res://World.gd" id="1_0loc0"]
-[ext_resource type="Script" path="res://SquareB.gd" id="2_qo6yj"]
-[ext_resource type="Texture2D" uid="uid://dy7vnmbuion3" path="res://Untitled.png" id="3_lni4n"]
-[ext_resource type="Texture2D" uid="uid://blgiprmrtbaep" path="res://Ground.png" id="4_djfvu"]
-[ext_resource type="Script" path="res://SquareR.gd" id="5_wsdmh"]
+[ext_resource type="Script" path="res://World.gd" id="1_pmu1h"]
+[ext_resource type="Script" path="res://SquareB.gd" id="2_yfnuh"]
+[ext_resource type="Texture2D" uid="uid://dy7vnmbuion3" path="res://Untitled.png" id="3_kilyc"]
+[ext_resource type="Texture2D" uid="uid://blgiprmrtbaep" path="res://Ground.png" id="4_rtc75"]
+[ext_resource type="Script" path="res://SquareR.gd" id="5_fswy0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lnvhn"]
 size = Vector2(99, 99)
@@ -25,19 +25,19 @@ size = Vector2(100, 100)
 
 [node name="World" type="Node2D" parent="."]
 scale = Vector2(0.5, 0.5)
-script = ExtResource("1_0loc0")
+script = ExtResource("1_pmu1h")
 
 [node name="SquareB" type="CharacterBody2D" parent="World"]
-position = Vector2(2196, 1124)
+position = Vector2(2184, 1152)
 collision_mask = 2
-script = ExtResource("2_qo6yj")
+script = ExtResource("2_yfnuh")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/SquareB"]
 shape = SubResource("RectangleShape2D_lnvhn")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/SquareB"]
-texture = ExtResource("3_lni4n")
+texture = ExtResource("3_kilyc")
 
 [node name="floor" type="StaticBody2D" parent="World"]
 position = Vector2(1118, 1240)
@@ -49,7 +49,7 @@ metadata/_edit_group_ = true
 shape = SubResource("RectangleShape2D_cfr8n")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/floor"]
-texture = ExtResource("4_djfvu")
+texture = ExtResource("4_rtc75")
 
 [node name="pillar1" type="StaticBody2D" parent="World"]
 position = Vector2(512, 1115)
@@ -61,31 +61,31 @@ metadata/_edit_group_ = true
 shape = SubResource("RectangleShape2D_4ekot")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/pillar1"]
-texture = ExtResource("4_djfvu")
+texture = ExtResource("4_rtc75")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="World"]
+[node name="pillarR" type="StaticBody2D" parent="World"]
 position = Vector2(1710, 1115)
 scale = Vector2(1, 1.5)
 collision_layer = 2
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/pillarR"]
 shape = SubResource("RectangleShape2D_yaw1n")
 
-[node name="Sprite2D" type="Sprite2D" parent="World/StaticBody2D"]
-texture = ExtResource("4_djfvu")
+[node name="Sprite2D" type="Sprite2D" parent="World/pillarR"]
+texture = ExtResource("4_rtc75")
 
 [node name="SquareR" type="CharacterBody2D" parent="World"]
-position = Vector2(146, 1094)
+position = Vector2(98, 1154)
 collision_mask = 2
-script = ExtResource("5_wsdmh")
+script = ExtResource("5_fswy0")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/SquareR"]
 shape = SubResource("RectangleShape2D_ktj7q")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/SquareR"]
-texture = ExtResource("3_lni4n")
+texture = ExtResource("3_kilyc")
 
 [node name="Area2D" type="Area2D" parent="World/SquareR"]
 
