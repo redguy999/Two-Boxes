@@ -21,7 +21,7 @@ size = Vector2(100, 100)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ktj7q"]
 size = Vector2(100, 100)
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node2D"]
 script = ExtResource("1_mapki")
 
 [node name="World" type="Node2D" parent="."]

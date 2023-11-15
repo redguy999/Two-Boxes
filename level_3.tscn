@@ -22,14 +22,14 @@ size = Vector2(100, 100)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w7umo"]
 size = Vector2(100, 100)
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node2D"]
 script = ExtResource("1_gker2")
 
 [node name="World" type="Node2D" parent="."]
 scale = Vector2(0.5, 0.5)
 
 [node name="SquareB" type="CharacterBody2D" parent="World"]
-position = Vector2(126, 134)
+position = Vector2(182, 176)
 collision_mask = 2
 script = ExtResource("2_km8ll")
 metadata/_edit_group_ = true
@@ -112,7 +112,7 @@ shape = SubResource("RectangleShape2D_uixh5")
 texture = ExtResource("4_kccnu")
 
 [node name="floor" type="StaticBody2D" parent="World"]
-position = Vector2(1022, 230)
+position = Vector2(1000, 255)
 scale = Vector2(21, 1)
 collision_layer = 2
 metadata/_edit_group_ = true
@@ -124,7 +124,7 @@ shape = SubResource("RectangleShape2D_wtdf8")
 texture = ExtResource("4_kccnu")
 
 [node name="floor3" type="StaticBody2D" parent="World"]
-position = Vector2(980, 1058)
+position = Vector2(1000, 1058)
 scale = Vector2(21, 1)
 collision_layer = 2
 metadata/_edit_group_ = true
@@ -136,7 +136,7 @@ shape = SubResource("RectangleShape2D_wtdf8")
 texture = ExtResource("4_kccnu")
 
 [node name="floor2" type="StaticBody2D" parent="World"]
-position = Vector2(1570, 658)
+position = Vector2(1554, 658)
 rotation = 1.5708
 scale = Vector2(9, 10)
 collision_layer = 2
@@ -149,7 +149,7 @@ shape = SubResource("RectangleShape2D_wtdf8")
 texture = ExtResource("4_kccnu")
 
 [node name="Button1" type="Area2D" parent="World"]
-position = Vector2(826, 174)
+position = Vector2(1044, 196)
 rotation = 1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Button1"]
@@ -178,8 +178,9 @@ shape = SubResource("RectangleShape2D_wtdf8")
 texture = ExtResource("4_kccnu")
 
 [node name="Door2" type="StaticBody2D" parent="World"]
-position = Vector2(676, 1204)
-scale = Vector2(0.5, 2)
+position = Vector2(2186, 642)
+rotation = 1.5708
+scale = Vector2(0.5, 3)
 collision_layer = 2
 script = ExtResource("6_y325e")
 metadata/_edit_group_ = true
@@ -192,4 +193,6 @@ texture = ExtResource("4_kccnu")
 
 [connection signal="body_entered" from="World/SquareR/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="World/Button1" to="World/Door1" method="_on_button_1_body_entered"]
+[connection signal="body_exited" from="World/Button1" to="World/Door1" method="_on_button_1_body_exited"]
 [connection signal="body_entered" from="World/Button2" to="World/Door2" method="_on_button_2_body_entered"]
+[connection signal="body_exited" from="World/Button2" to="World/Door2" method="_on_button_2_body_exited"]
