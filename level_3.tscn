@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://n1fjers6kftm"]
+[gd_scene load_steps=13 format=3 uid="uid://n1fjers6kftm"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_gker2"]
 [ext_resource type="Script" path="res://SquareB.gd" id="2_km8ll"]
 [ext_resource type="Texture2D" uid="uid://dy7vnmbuion3" path="res://Untitled.png" id="3_3j66h"]
 [ext_resource type="Texture2D" uid="uid://blgiprmrtbaep" path="res://Ground.png" id="4_kccnu"]
 [ext_resource type="Script" path="res://SquareR.gd" id="4_vrfyv"]
+[ext_resource type="Texture2D" uid="uid://3v7g61ctowr0" path="res://D&B.png" id="6_kq3jc"]
 [ext_resource type="Script" path="res://Door.gd" id="6_y325e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bn2kx"]
@@ -149,36 +150,34 @@ shape = SubResource("RectangleShape2D_wtdf8")
 texture = ExtResource("4_kccnu")
 
 [node name="Button1" type="Area2D" parent="World"]
+z_index = -1
 position = Vector2(1044, 196)
 rotation = 1.5708
+scale = Vector2(1, 0.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Button1"]
 scale = Vector2(1, 0.5)
 shape = SubResource("RectangleShape2D_w7umo")
 
+[node name="Sprite2D" type="Sprite2D" parent="World/Button1"]
+texture = ExtResource("6_kq3jc")
+
 [node name="Button2" type="Area2D" parent="World"]
+z_index = -1
 position = Vector2(866, 1262)
 rotation = 1.5708
+scale = Vector2(1, 0.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Button2"]
 scale = Vector2(1, 0.5)
 shape = SubResource("RectangleShape2D_w7umo")
 
-[node name="Door1" type="StaticBody2D" parent="World"]
-position = Vector2(676, 1204)
-scale = Vector2(0.5, 2)
-collision_layer = 2
-script = ExtResource("6_y325e")
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Door1"]
-shape = SubResource("RectangleShape2D_wtdf8")
-
-[node name="Sprite2D" type="Sprite2D" parent="World/Door1"]
-texture = ExtResource("4_kccnu")
+[node name="Sprite2D" type="Sprite2D" parent="World/Button2"]
+texture = ExtResource("6_kq3jc")
 
 [node name="Door2" type="StaticBody2D" parent="World"]
-position = Vector2(2186, 642)
+z_index = -1
+position = Vector2(2186, 288)
 rotation = 1.5708
 scale = Vector2(0.5, 3)
 collision_layer = 2
@@ -189,7 +188,29 @@ metadata/_edit_group_ = true
 shape = SubResource("RectangleShape2D_wtdf8")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Door2"]
-texture = ExtResource("4_kccnu")
+texture = ExtResource("6_kq3jc")
+
+[node name="Door1" type="StaticBody2D" parent="World"]
+z_index = -1
+position = Vector2(676, 1204)
+scale = Vector2(0.5, 2)
+collision_layer = 2
+script = ExtResource("6_y325e")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Door1"]
+shape = SubResource("RectangleShape2D_wtdf8")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Door1"]
+texture = ExtResource("6_kq3jc")
+
+[node name="GUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 338.0
+offset_top = 602.0
+offset_right = 378.0
+offset_bottom = 642.0
 
 [connection signal="body_entered" from="World/SquareR/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="World/Button1" to="World/Door1" method="_on_button_1_body_entered"]

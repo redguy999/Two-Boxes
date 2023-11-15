@@ -98,4 +98,16 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="Controls" type="RichTextLabel" parent="GUI"]
+editor_description = "I'd like for the Text to be center aligned, but it seems I can't do that."
+layout_mode = 0
+offset_left = 283.0
+offset_top = 129.0
+offset_right = 880.0
+offset_bottom = 230.0
+text = "Use the arrow keys to move the blue box, use WASD to move the red box. 
+Press the up arrow or W to jump.
+Move the two boxes together to complete the level."
+scroll_active = false
+
 [connection signal="body_entered" from="World/SquareR/Area2D" to="." method="_on_area_2d_body_entered"]

@@ -3,7 +3,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print("hello world!") # Replace with function body.
+	levelNum=(get_tree().current_scene.scene_file_path.to_int())
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -12,22 +12,14 @@ func _process(delta):
 
 #var simultaneous_scene = preload("level_2.tscn").instantiate()
 var levelOrder=["level_1","level_2","level_3"]
-var levelNum=1
+var levelNum
 
 func nextLevel():
-	# This is like autoloading the scene, only
-	# it happens after already loading the main scene.
-	#get_tree().root.add_child(simultaneous_scene)
+	if(get_tree().current_scene.scene_file_path=="Level_3"):
+		pass#Go to Win Screen or something, just make sure line after this doesn't run once implmented.
+		#Alternatively you just have the win screen be the last level in levelOrder
 	get_tree().change_scene_to_file(levelOrder[levelNum]+".tscn")
-	#get_tree().change_scene_to_packed(simultaneous_scene)
-	#TODO: change this so it will cycle through the levels.
-	if(levelNum==2):
-		pass
-		#simultaneous_scene = preload("level_3.tscn").instantiate()
-		
-	levelNum+=1;
 	
 func _on_area_2d_body_entered(body):
-	print("Test")
 	if(body.name=="SquareB"):
 		call_deferred("nextLevel")#load next level 
