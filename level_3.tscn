@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://n1fjers6kftm"]
+[gd_scene load_steps=14 format=3 uid="uid://n1fjers6kftm"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_gker2"]
 [ext_resource type="Script" path="res://SquareB.gd" id="2_km8ll"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://SquareR.gd" id="4_vrfyv"]
 [ext_resource type="Texture2D" uid="uid://3v7g61ctowr0" path="res://D&B.png" id="6_kq3jc"]
 [ext_resource type="Script" path="res://Door.gd" id="6_y325e"]
+[ext_resource type="Texture2D" uid="uid://bbvumvrywng0n" path="res://SkyColor.png" id="8_vtqna"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bn2kx"]
 size = Vector2(99, 99)
@@ -204,6 +205,13 @@ shape = SubResource("RectangleShape2D_wtdf8")
 [node name="Sprite2D" type="Sprite2D" parent="World/Door1"]
 texture = ExtResource("6_kq3jc")
 
+[node name="Sky" type="Sprite2D" parent="World"]
+editor_description = "Z Index is set to -10 because it needs to be behind everthing."
+z_index = -10
+position = Vector2(1190, 695)
+scale = Vector2(24.8, 14.9)
+texture = ExtResource("8_vtqna")
+
 [node name="GUI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -211,6 +219,16 @@ offset_left = 338.0
 offset_top = 602.0
 offset_right = 378.0
 offset_bottom = 642.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GUI"]
+layout_mode = 0
+offset_left = -287.0
+offset_top = -420.0
+offset_right = 154.0
+offset_bottom = -124.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Each button will open a door while one of the boxes stands on said button."
+scroll_active = false
 
 [connection signal="body_entered" from="World/SquareR/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="World/Button1" to="World/Door1" method="_on_button_1_body_entered"]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://cmqlbxc8ksxc8"]
+[gd_scene load_steps=12 format=3 uid="uid://cmqlbxc8ksxc8"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_mapki"]
 [ext_resource type="Script" path="res://SquareB.gd" id="2_yfnuh"]
 [ext_resource type="Texture2D" uid="uid://dy7vnmbuion3" path="res://Untitled.png" id="3_kilyc"]
 [ext_resource type="Texture2D" uid="uid://blgiprmrtbaep" path="res://Ground.png" id="4_rtc75"]
 [ext_resource type="Script" path="res://SquareR.gd" id="5_fswy0"]
+[ext_resource type="Texture2D" uid="uid://bbvumvrywng0n" path="res://SkyColor.png" id="6_sxhqp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lnvhn"]
 size = Vector2(99, 99)
@@ -40,7 +41,7 @@ shape = SubResource("RectangleShape2D_lnvhn")
 texture = ExtResource("3_kilyc")
 
 [node name="floor" type="StaticBody2D" parent="World"]
-position = Vector2(1118, 1240)
+position = Vector2(1118, 1250)
 scale = Vector2(25, 1)
 collision_layer = 2
 metadata/_edit_group_ = true
@@ -52,7 +53,7 @@ shape = SubResource("RectangleShape2D_cfr8n")
 texture = ExtResource("4_rtc75")
 
 [node name="pillar1" type="StaticBody2D" parent="World"]
-position = Vector2(512, 1115)
+position = Vector2(512, 1125)
 scale = Vector2(1, 1.5)
 collision_layer = 2
 metadata/_edit_group_ = true
@@ -64,7 +65,7 @@ shape = SubResource("RectangleShape2D_4ekot")
 texture = ExtResource("4_rtc75")
 
 [node name="pillarR" type="StaticBody2D" parent="World"]
-position = Vector2(1710, 1115)
+position = Vector2(1710, 1125)
 scale = Vector2(1, 1.5)
 collision_layer = 2
 metadata/_edit_group_ = true
@@ -92,6 +93,13 @@ texture = ExtResource("3_kilyc")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/SquareR/Area2D"]
 shape = SubResource("RectangleShape2D_ktj7q")
 
+[node name="Sky" type="Sprite2D" parent="World"]
+editor_description = "Z Index is set to -10 because it needs to be behind everthing."
+z_index = -10
+position = Vector2(1190, 695)
+scale = Vector2(24.8, 14.9)
+texture = ExtResource("6_sxhqp")
+
 [node name="GUI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -105,6 +113,7 @@ offset_left = 283.0
 offset_top = 129.0
 offset_right = 880.0
 offset_bottom = 230.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Use the arrow keys to move the blue box, use WASD to move the red box. 
 Press the up arrow or W to jump.
 Move the two boxes together to complete the level."
