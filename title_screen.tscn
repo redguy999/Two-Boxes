@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://i04ampirpbvk"]
 
-[node name="TitleScreen" type="Node"]
+[node name="Main" type="Node"]
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3

@@ -17,11 +17,11 @@ var levelNum=1
 func nextLevel():
 	# This is like autoloading the scene, only
 	# it happens after already loading the main scene.
-	get_tree().root.add_child(simultaneous_scene)
+	#get_tree().root.add_child(simultaneous_scene)
 	get_tree().change_scene_to_file(levelOrder[levelNum]+".tscn")
-	get_tree().change_scene_to_packed(simultaneous_scene)
+	#get_tree().change_scene_to_packed(simultaneous_scene)
 	#TODO: change this so it will cycle through the levels.
-	if(levelNum==1):
+	if(levelNum==2):
 		simultaneous_scene = preload("level_3.tscn").instantiate()
 		
 	levelNum+=1;

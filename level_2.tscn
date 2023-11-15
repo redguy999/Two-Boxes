@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://c51rextdshfd5"]
 
-[ext_resource type="Script" path="res://World.gd" id="1_228g4"]
 [ext_resource type="Script" path="res://SquareB.gd" id="1_dfhxh"]
+[ext_resource type="Script" path="res://Main.gd" id="1_o0fd1"]
 [ext_resource type="Texture2D" uid="uid://dy7vnmbuion3" path="res://Untitled.png" id="2_brv24"]
 [ext_resource type="Texture2D" uid="uid://blgiprmrtbaep" path="res://Ground.png" id="3_jixvr"]
 [ext_resource type="Script" path="res://SquareR.gd" id="4_e7wtf"]
@@ -18,11 +18,11 @@ size = Vector2(100, 100)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3tox2"]
 size = Vector2(100, 100)
 
-[node name="Level2" type="Node"]
+[node name="Main" type="Node"]
+script = ExtResource("1_o0fd1")
 
 [node name="World" type="Node2D" parent="."]
 scale = Vector2(0.5, 0.5)
-script = ExtResource("1_228g4")
 
 [node name="SquareB" type="CharacterBody2D" parent="World"]
 position = Vector2(2034, 256)
@@ -131,4 +131,4 @@ shape = SubResource("RectangleShape2D_3tox2")
 [node name="Sprite2D" type="Sprite2D" parent="World/BoundaryB"]
 texture = ExtResource("3_jixvr")
 
-[connection signal="body_entered" from="World/SquareR/Area2D" to="World" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="World/SquareR/Area2D" to="." method="_on_area_2d_body_entered"]

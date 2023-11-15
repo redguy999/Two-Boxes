@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://df4605tkkpq3"]
+[gd_scene load_steps=12 format=3 uid="uid://n1fjers6kftm"]
 
-[ext_resource type="Script" path="res://World.gd" id="1_k5ws1"]
+[ext_resource type="Script" path="res://Main.gd" id="1_gker2"]
 [ext_resource type="Script" path="res://SquareB.gd" id="2_km8ll"]
 [ext_resource type="Texture2D" uid="uid://dy7vnmbuion3" path="res://Untitled.png" id="3_3j66h"]
 [ext_resource type="Texture2D" uid="uid://blgiprmrtbaep" path="res://Ground.png" id="4_kccnu"]
 [ext_resource type="Script" path="res://SquareR.gd" id="4_vrfyv"]
+[ext_resource type="Script" path="res://Door.gd" id="6_y325e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bn2kx"]
 size = Vector2(99, 99)
@@ -21,11 +22,11 @@ size = Vector2(100, 100)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w7umo"]
 size = Vector2(100, 100)
 
-[node name="Node2D" type="Node"]
+[node name="Main" type="Node"]
+script = ExtResource("1_gker2")
 
 [node name="World" type="Node2D" parent="."]
 scale = Vector2(0.5, 0.5)
-script = ExtResource("1_k5ws1")
 
 [node name="SquareB" type="CharacterBody2D" parent="World"]
 position = Vector2(126, 134)
@@ -167,6 +168,7 @@ shape = SubResource("RectangleShape2D_w7umo")
 position = Vector2(676, 1204)
 scale = Vector2(0.5, 2)
 collision_layer = 2
+script = ExtResource("6_y325e")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Door1"]
@@ -176,9 +178,10 @@ shape = SubResource("RectangleShape2D_wtdf8")
 texture = ExtResource("4_kccnu")
 
 [node name="Door2" type="StaticBody2D" parent="World"]
-position = Vector2(1248, 90)
+position = Vector2(676, 1204)
 scale = Vector2(0.5, 2)
 collision_layer = 2
+script = ExtResource("6_y325e")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Door2"]
@@ -186,3 +189,7 @@ shape = SubResource("RectangleShape2D_wtdf8")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/Door2"]
 texture = ExtResource("4_kccnu")
+
+[connection signal="body_entered" from="World/SquareR/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="World/Button1" to="World/Door1" method="_on_button_1_body_entered"]
+[connection signal="body_entered" from="World/Button2" to="World/Door2" method="_on_button_2_body_entered"]
