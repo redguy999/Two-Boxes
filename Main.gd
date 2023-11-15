@@ -10,7 +10,7 @@ func _ready():
 func _process(delta):
 	pass
 
-var simultaneous_scene = preload("level_2.tscn").instantiate()
+#var simultaneous_scene = preload("level_2.tscn").instantiate()
 var levelOrder=["level_1","level_2","level_3"]
 var levelNum=1
 
@@ -22,7 +22,8 @@ func nextLevel():
 	#get_tree().change_scene_to_packed(simultaneous_scene)
 	#TODO: change this so it will cycle through the levels.
 	if(levelNum==2):
-		simultaneous_scene = preload("level_3.tscn").instantiate()
+		pass
+		#simultaneous_scene = preload("level_3.tscn").instantiate()
 		
 	levelNum+=1;
 	
