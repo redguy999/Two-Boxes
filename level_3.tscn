@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://n1fjers6kftm"]
+[gd_scene load_steps=15 format=3 uid="uid://n1fjers6kftm"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_gker2"]
 [ext_resource type="Script" path="res://SquareB.gd" id="2_km8ll"]
 [ext_resource type="Texture2D" uid="uid://dy7vnmbuion3" path="res://Untitled.png" id="3_3j66h"]
 [ext_resource type="Texture2D" uid="uid://blgiprmrtbaep" path="res://Ground.png" id="4_kccnu"]
 [ext_resource type="Script" path="res://SquareR.gd" id="4_vrfyv"]
+[ext_resource type="Texture2D" uid="uid://daxd2efbhn634" path="res://Square.png" id="5_puwd1"]
 [ext_resource type="Texture2D" uid="uid://3v7g61ctowr0" path="res://D&B.png" id="6_kq3jc"]
 [ext_resource type="Script" path="res://Door.gd" id="6_y325e"]
 [ext_resource type="Texture2D" uid="uid://bbvumvrywng0n" path="res://SkyColor.png" id="8_vtqna"]
@@ -52,7 +53,7 @@ metadata/_edit_group_ = true
 shape = SubResource("RectangleShape2D_ybb1a")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/SquareR"]
-texture = ExtResource("3_3j66h")
+texture = ExtResource("5_puwd1")
 
 [node name="Area2D" type="Area2D" parent="World/SquareR"]
 

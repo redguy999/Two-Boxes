@@ -15,8 +15,8 @@ var levelOrder=["level_1","level_2","level_3"]
 var levelNum
 
 func nextLevel():
-	if(get_tree().current_scene.scene_file_path=="Level_3"):
-		return#Go to Win Screen or something, just make sure line after this doesn't run once implmented.
+	if(levelOrder[-1] in get_tree().current_scene.scene_file_path):
+		return#Go to Win Screen or something, just make sure the line after this doesn't run once implmented.
 		#Alternatively you just have the win screen be the last level in levelOrder
 	get_tree().change_scene_to_file(levelOrder[levelNum]+".tscn")
 	

@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://cmqlbxc8ksxc8"]
+[gd_scene load_steps=13 format=3 uid="uid://cmqlbxc8ksxc8"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_mapki"]
 [ext_resource type="Script" path="res://SquareB.gd" id="2_yfnuh"]
 [ext_resource type="Texture2D" uid="uid://dy7vnmbuion3" path="res://Untitled.png" id="3_kilyc"]
 [ext_resource type="Texture2D" uid="uid://blgiprmrtbaep" path="res://Ground.png" id="4_rtc75"]
 [ext_resource type="Script" path="res://SquareR.gd" id="5_fswy0"]
+[ext_resource type="Texture2D" uid="uid://daxd2efbhn634" path="res://Square.png" id="6_gcqsy"]
 [ext_resource type="Texture2D" uid="uid://bbvumvrywng0n" path="res://SkyColor.png" id="6_sxhqp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lnvhn"]
@@ -86,7 +87,7 @@ metadata/_edit_group_ = true
 shape = SubResource("RectangleShape2D_ktj7q")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/SquareR"]
-texture = ExtResource("3_kilyc")
+texture = ExtResource("6_gcqsy")
 
 [node name="Area2D" type="Area2D" parent="World/SquareR"]
 
