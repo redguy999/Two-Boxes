@@ -231,6 +231,40 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Each button will open a door while one of the boxes stands on said button."
 scroll_active = false
 
+[node name="EndScreen" type="Node2D" parent="."]
+editor_description = "The classic solution to making something appear, put it behind everything so it can't be seen, then move it."
+visible = false
+scale = Vector2(0.5, 0.5)
+
+[node name="Background" type="Sprite2D" parent="EndScreen"]
+position = Vector2(1132, 680)
+scale = Vector2(25, 25)
+texture = ExtResource("8_vtqna")
+
+[node name="Control" type="Control" parent="EndScreen"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="EndScreen/Control"]
+layout_mode = 0
+offset_left = 712.0
+offset_top = 570.0
+offset_right = 1580.0
+offset_bottom = 664.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 50
+text = "You got the squares back together!"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="EndScreen/Control"]
+layout_mode = 0
+offset_left = 986.0
+offset_top = 1220.0
+offset_right = 1336.0
+offset_bottom = 1294.0
+text = "I was hoping to do more here but I had to throw this and the title screen together in a hour."
+
 [connection signal="body_entered" from="World/SquareR/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="World/Button1" to="World/Door1" method="_on_button_1_body_entered"]
 [connection signal="body_exited" from="World/Button1" to="World/Door1" method="_on_button_1_body_exited"]

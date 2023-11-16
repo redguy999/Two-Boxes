@@ -13,7 +13,6 @@ func _process(delta):
 
 func _on_button_1_body_entered(body):
 	var hold = self.find_child("CollisionShape2D")
-	print(hold)
 	hold.set_deferred("disabled",true)
 	self.set_deferred("visible",false)
 

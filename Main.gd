@@ -16,6 +16,13 @@ var levelNum
 
 func nextLevel():
 	if(levelOrder[-1] in get_tree().current_scene.scene_file_path):
+		for child in self.get_children():
+			if(child.name=="EndScreen"):
+				child.set_deferred("visible",true)
+				get_tree().current_scene.call_deferred("remove_child",get_tree().current_scene.get_child(0))
+				#That should be World
+				get_tree().current_scene.get_child(0).set_deferred("visible",false)
+				#And that should be the text.
 		return#Go to Win Screen or something, just make sure the line after this doesn't run once implmented.
 		#Alternatively you just have the win screen be the last level in levelOrder
 	get_tree().change_scene_to_file(levelOrder[levelNum]+".tscn")
